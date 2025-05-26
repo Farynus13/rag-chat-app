@@ -6,12 +6,22 @@ from fastapi import FastAPI
 from pydantic import BaseModel
 from sentence_transformers import SentenceTransformer
 import faiss
+from fastapi.middleware.cors import CORSMiddleware
 
 # Initialize FastAPI app
 app = FastAPI()
 
-# Use a lighter model
-model = SentenceTransformer('paraphrase-MiniLM-L3-v2')
+origins = ["http://localhost:5173", "https://wmaszyna.netlify.app/"]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_methods=["GET", "POST", "OPTIONS"],
+    allow_headers=["Content-Type"],
+)
+
+
+model = SentenceTransformer('all-MiniLM-L6-v2')
 
 # Global variables loaded at startup
 chunks = []
