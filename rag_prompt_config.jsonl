@@ -1,0 +1,16 @@
+[
+    {
+        "base_chunk": {
+            "content": "Pisząc program w języku asemblera mMszyny W posługujemy się niemal wyłącznie instrukcjami\nodpowiadającymi rozkazom danego procesora. Dlatego konieczne jest poznanie tych rozkazów,\npodobnie jak zaznajomienie się z architekturą tegoż procesora. Program w języku asemblera tworzą\nrozkazy oraz dane, na których te rozkazy działają. Program składa się z kolejnych linii, w każdej\nlinii może znaleźć się jeden rozkaz lub deklaracja pojedynczej danej. Formalnie składnia linii\nprogramu jest następująca:\n[<etykieta>:] <rozkaz lub pseudorozkaz> [<argument>]\ngdzie:\n<etykieta> – ciąg liter i cyfr będący symboliczną reprezentacją określonego adresu\n<rozkaz lub pseudorozkaz> – symboliczna nazwa jednego z rozkazów procesora\nlub jednego z tzw. pseudorozkazów rezerwacji miejsca w pamięci na dane (RST,\nRPA)\n<argument> – liczba dziesiętna lub jedna z etykiet wprowadzonych na początku linii\nPseudorozkazy RST i RPA pozwalają odpowiednio zarezerwować miejsce w pamięci na\npojedynczą daną o ustalonej (jako argument) wartości początkowej oraz zarezerwować miejsce\nw pamięci na daną bez wskazywania jej wartości początkowej.(aby zarezerwować miejsce na daną możemy zrobić <etykieta> RST <wartość> lub <etykieta> RPA). Jako rozkaz może pojawić się\nnazwa jednego z dostępnych rozkazów. Przyjmiemy, że w procesorze maszyny W dostępnych jest 8\nrozkazów wymienionych w poniższej tabeli.\nNazwa Kod Działanie\nSTP 000 Zatrzymanie (zakończenie) pracy programu\nDOD 001 Dodanie do akumulatora zawartości komórki pamięci wskazanej\nprzez argument\nODE 010 Odjęcie od akumulatora zawartości komórki pamięci wskazanej\nprzez argument\nPOB 011 Pobranie do akumulatora zawartości komórki pamięci wskazanej\nprzez argument\nŁAD 100 Załadowanie   zawartości   akumulatora   do   komórki   pamięci\nwskazanej przez argument\nStrona 2\nNazwa Kod Działanie\nSOB 101 Ustalenie, że kolejnym wykonywanym rozkazem będzie ten,\nktóry znajduje się w komórce pamięci wskazanej przez argument\n(tzw. skok bezwarunkowy)\nSOM 110 Jeżeli w akumulatorze jest liczba ujemna, jako następny będzie\nwykonywany rozkaz umieszczony w komórce pamięci wskazanej\nprzez argument. Jeżeli w akumulatorze jest liczba nieujemna, jako\nnastępny zostanie wykonany rozkaz umieszczony w pamięci\nbezpośrednio za rozkazem SOM\nSOZ 111 Skok pod adres wskazany argumentem wykonywany tylko, gdy\nw akumulatorze jest 0. W przeciwnym razie jako następny\nzostanie wykonany rozkaz umieszczony w pamięci bezpośrednio\nza rozkazem SOZ\nAby napisać program w języku asemblera maszyny W trzeba najpierw stworzyć algorytm rozwiązujący\nokreślone zadanie, sprecyzować go z wykorzystaniem wyłącznie dostępnych rozkazów i wreszcie\nzapisać go w formie linii programu w języku asemblera.\n",
+            "source": "Asembler.pdf",
+            "tags": ["działanie maszyny W", "programowanie", "język asemblera"],
+            "type": "explanation"
+        },
+        "system_prompt": {
+            "content": "Jesteś ekspertem w dziedzinie Języka Maszyny W.\nTwoim zadaniem jest pomoc w napisaniu programu w tym języku, bądź wyjaśnienie jego działania.\nWszystkie informacje, które posiadasz są zawarte w kontekście.",
+            "source": "system_prompt",
+            "tags": ["system prompt", "expert"],
+            "type": "system"
+        }
+    }
+]
