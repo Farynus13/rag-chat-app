@@ -9,9 +9,6 @@ RUN apt-get update && apt-get install -y \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy all project files into container
-COPY . .
-
 # Install only necessary Python packages
 RUN pip install --no-cache-dir \
     fastapi \
@@ -19,6 +16,9 @@ RUN pip install --no-cache-dir \
     requests \
     sentence-transformers \
     faiss-cpu
+
+# Copy all project files into container
+COPY . .
 
 # Expose FastAPI port
 EXPOSE 10000
